@@ -10,6 +10,20 @@
 		
 		console.log(UNEMPDATA)
 		
+		var gDataTable = new google.visualization.DataTable();
+		
+		//wehn I add columns (column names) the first parameter is thr data type in that column
+		//the 2nd paramenter is the name of the column
+		
+		
+		gDataTable.addColumn('string', UNEMPDATA.columns[0]);
+		gDataTable.addColumn('number', UNEMPDATA.columns[1]);
+		
+		gDataTable.addRows(UNEMPDATA.rows)
+		
+		
+		
+		/*
 		var myObsData = UNEMPDATA.observations; 
 		
 		///i am trying to construct an array of arrays
@@ -52,14 +66,16 @@
 		 
 		 //create options object to actually customize the look of the chart
 		 
+		 */
+		 
 		 var chartOptions = {
-          title: "Unemployment since 1980"
+          title: "Unemployment since 1948"
         };
 
 
 		//tell it to create a line chart
 		var myChart = new google.visualization.LineChart(document.getElementById("myChartDiv"));
-  			myChart.draw(myDataTable, chartOptions);
+  			myChart.draw(gDataTable, chartOptions);
    	
 	}
 	
@@ -72,6 +88,7 @@
 		$.get("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT+*+FROM+12A0eKUXKb4TCFhngfaGqaMEH6uECY1iBhd3VOBAV&key=AIzaSyDsBrSpJRliKgi913vr9FWTy8oL57c42bA", dataLoaded, "json");
 		
 	}
+		
 	
 	function pageLoaded(){
 		
