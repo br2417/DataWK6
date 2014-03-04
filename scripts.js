@@ -16,10 +16,10 @@
 		//the 2nd paramenter is the name of the column
 		
 		
-		gDataTable.addColumn('string', UNEMPDATA.columns[0]);
+		gDataTable.addColumn('string', UNEMPDATA.columns[0]);  //only works because this is a google.visualization
 		gDataTable.addColumn('number', UNEMPDATA.columns[1]);
 		
-		gDataTable.addRows(UNEMPDATA.rows)
+		gDataTable.addRows(UNEMPDATA.rows) //only works because this is a google.visualization
 		
 		
 		
@@ -87,6 +87,10 @@
 		//  * instead of loading data from a static JSON file I'm going to laotd it from a google fusion table
 		$.get("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT+*+FROM+12A0eKUXKb4TCFhngfaGqaMEH6uECY1iBhd3VOBAV&key=AIzaSyDsBrSpJRliKgi913vr9FWTy8oL57c42bA", dataLoaded, "json");
 		
+		
+		// in order to have two charts on the same page we would need a second get request. 
+		// we would also need a new dataloaded function - or a different function (e.g. dataloaded2)
+		//can still use same argument name becuase we are in a completely different function
 	}
 		
 	
