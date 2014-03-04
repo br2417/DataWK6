@@ -91,6 +91,7 @@
 		// in order to have two charts on the same page we would need a second get request. 
 		// we would also need a new dataloaded function - or a different function (e.g. dataloaded2)
 		//can still use same argument name becuase we are in a completely different function
+		//we would also need a new div
 	}
 		
 	
