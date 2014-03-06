@@ -22,12 +22,14 @@
 		//The below variable feeds the data to visualization library
 		var gUnempTable = new google.visualization.DataTable();
 		
+		//Below we are adding columns to the chart
 		//when I add columns (column names) the first parameter is the data type in that column
 		//the 2nd paramenter is the name of the column
 		
 		gUnempTable.addColumn('string', CivUnempRate.columns[0]);  //only works because this is a google.visualization
 		gUnempTable.addColumn('number', CivUnempRate.columns[1]);
 		
+		//Below we are adding rows
 		gUnempTable.addRows(CivUnempRate.rows) //only works because this is a google.visualization
 		
 		
@@ -46,7 +48,7 @@
         };
 
 	
-		//Below we tell the computer to create a line chart
+		//Below I tell the computer to create a line chart
 		//We use a function that is part of the Google Visualizations library 
 		
 		var gUnempChart = new google.visualization.LineChart(document.getElementById("myChartDiv"));
@@ -54,7 +56,7 @@
    	
 	}
 	
-		//Below I have created and named the function gloaded
+		//Below I have created and named the function called gloaded
 
 	function gLoaded(){
 		
@@ -67,11 +69,6 @@
 		
 		$.get("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT+*+FROM+12A0eKUXKb4TCFhngfaGqaMEH6uECY1iBhd3VOBAV+WHERE+DATE>'1989-12-01'&key=AIzaSyDsBrSpJRliKgi913vr9FWTy8oL57c42bA", mDataLoaded, "json");
 		
-		
-		// in order to have two charts on the same page we would need a second get request. 
-		// we would also need a new dataloaded function - or a different function (e.g. dataloaded2)
-		//can still use same argument name becuase we are in a completely different function
-		//we would also need a new div
 	}
 		
 		//Below I have created and named the function mPageLoaded
